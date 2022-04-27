@@ -13,7 +13,7 @@ import axios from "axios"
   
   const [data, setData1] = useState([]);
   const [api, setApi] = useState(0);
-    const apis =  axios.get(allApi[api]).then( res=>{
+   axios.get(allApi[api]).then( res=>{
       
       setData1(res.data);
     })
@@ -36,22 +36,27 @@ import axios from "axios"
             <button>2008</button>
             <button>2009</button>
             <button>2010</button>
-            <button>2006</button>
-            <button>2007</button>
-            <button>2008</button>
-            <button>2009</button>
-            <button>2010</button>
-            <button>2006</button>
+            <button>2011</button> 
+            <button>2012</button>
+            <button>2013</button>
+            <button onClick={() => setApi(3)}>2014</button>
+            <button>2015</button>
+            <button>2016</button>
+            <button>2017</button>
+            <button>2018</button>
+            <button>2019</button>
+            <button>2020</button>
+
           </div>
           <h2>Successful Launch</h2>
           <div className="buttons">
             <button onClick={() => setApi(1)}>True</button>
-            <button>False</button>
+            <button onClick={() => setApi(0)}>False</button>
           </div>
           <h2>Successful Launch</h2>
           <div className="buttons">
-            <button>True</button>
-            <button>False</button>
+            <button onClick={() => setApi(2)}>True</button>
+            <button onClick={() => setApi(1)}>False</button>
           </div>
 
         </div>
@@ -61,7 +66,7 @@ import axios from "axios"
               
               <div className="card" key={e.flight_number}>
           <div className="image">
-            <img  src={e.links.mission_patch_small} width={200} height={200} layout="responsive" alt="Image" />
+            <img  src={e.links.mission_patch_small} width={190} height={200} layout="responsive" alt="Image" />
           </div>
           <h3>{e.mission_name} </h3>
           <h3>Mission Ids: {e.mission_id} </h3>
